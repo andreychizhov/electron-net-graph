@@ -2,6 +2,7 @@
 using electron_net.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace electron_net.Controllers
 {
@@ -12,7 +13,7 @@ namespace electron_net.Controllers
 
         public DataController()
         {
-            var lines = System.IO.File.ReadAllLines("dependencies.txt");
+            var lines = System.IO.File.ReadAllLines(@"d:\files\dependencies.txt");
             
             // 1 form nodes
             _nodes = lines.Select(n => n.Split(" <-- ")[0])
