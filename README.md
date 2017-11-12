@@ -2,6 +2,8 @@
 
 A graph visualizer built on top of [Electron.NET](https://github.com/ElectronNET/Electron.NET) project with awesome [vis.js](http://visjs.org/) library.
 
+You'll need to ensure you have the [.NET Core 2.0 SDK](https://www.microsoft.com/net/core) installed before launching thiss app.
+
 For launching an app please do the following:
 
 * First restore nuget packages with `nuget restore` command.
