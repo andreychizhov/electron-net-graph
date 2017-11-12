@@ -12,8 +12,8 @@ For launching an app please do the following:
 Also for building a graph you'll need a input data. Inpit is a simple text file with set of Nodes and its dependencies. For example:
 
 ```
-Node1 <-- DependentNode1
-Node1 <-- DependentNode2
-Node2 <-- DependentNode3
+DependentNode1 <-- DependenceNode1
+DependentNode1 <-- DependenceNode2
+DependentNode2 <-- DependenceNode3
 ...
 ```
