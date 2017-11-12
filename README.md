@@ -9,7 +9,9 @@ For launching an app please do the following:
 
 Also for building a graph you'll need a input data. Inpit is a simple text file with set of fields and its dependencies. For example:
 
+```
 Field1 <-- DependentField1
 Field1 <-- DependentField2
 Field2 <-- DependentField3
 ...
+```
