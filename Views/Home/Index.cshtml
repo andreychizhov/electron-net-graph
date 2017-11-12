@@ -1,0 +1,54 @@
+﻿<div id="mynetwork"></div>
+
+<script type="text/javascript">
+    // create an array with nodes
+    
+    var getJSON = function(url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = 'json';
+        xhr.onload = function() {
+            var status = xhr.status;
+            if (status === 200) {
+                callback(null, xhr.response);
+            } else {
+                callback(status, xhr.response);
+            }
+        };
+        xhr.send();
+    };
+    
+    var jsonResult;
+
+    getJSON('http://localhost:8001/data/getgraph',
+        function(err, data) {
+            jsonResult = data;
+            
+            var nodes = new vis.DataSet(jsonResult.nodes);
+
+            // create an array with edges
+            var edges = new vis.DataSet(jsonResult.edges);
+
+            // create a network
+            var container = document.getElementById('mynetwork');
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+
+            var options = {
+/*
+    // Enable this to make the endpoints smaller/larger
+    edges: {
+      arrows: {
+        to: {
+          scaleFactor: 5
+        }
+      }
+    }
+*/
+            };
+
+            var network = new vis.Network(container, data, options);
+        });
+</script>
